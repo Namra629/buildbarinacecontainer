@@ -12,8 +12,14 @@ pipeline {
             steps {
                 
                 sh '''
+                stage('Build ACE BAR') {
+    steps {
+        sh '''
+        # Create output folder
+        mkdir -p /home/Namra/SimpleWeather-Android/bars
+
 docker run --rm -d -e LICENSE=accept -v /home/Namra/SimpleWeather-Android:/home/ace/project ibmcom/ace-mqclient:latest 
-mkdir -p /home/ace/project/bars && ibmint package --input-path /home/ace/project --output-bar-file /home/ace/project/bars/SimpleWeather.bar
+bash -c " ibmint package --input-path /home/ace/project --output-bar-file /home/ace/project/bars/SimpleWeather.bar"
                 '''
 
                 
@@ -25,6 +31,7 @@ mkdir -p /home/ace/project/bars && ibmint package --input-path /home/ace/project
 }
     
             
+
 
 
 
