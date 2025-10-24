@@ -12,7 +12,8 @@ pipeline {
             steps {
                 
                 sh '''
-        
+         source  /home/Namra/ace-12.0.12.16/server/bin/mqsiprofile
+
         mkdir -p /home/Namra/SimpleWeather-Android/bars
 
 docker run --rm -d -e LICENSE=accept -v /home/Namra/SimpleWeather-Android:/home/ace/project ibmcom/ace-mqclient:latest 
@@ -28,6 +29,7 @@ bash -c " ibmint package --input-path /home/ace/project --output-bar-file /home/
 }
     
             
+
 
 
 
