@@ -1,12 +1,13 @@
 pipeline {
     agent any
+
     stages {
         stage('Checkout') {
             steps {
-                
                 git branch: 'main', url: 'https://github.com/Namra629/buildbarinacecontainer.git'
             }
-        
+        }
+
         stage('Build ACE BAR') {
             steps {
                 sh '''
@@ -16,12 +17,16 @@ pipeline {
             }
         }
     }
-}
 
+    post {
+        success {
+            archiveArtifacts artifacts: '/home/Namra/SimpleWeather-Android/bars/*.bar', fingerprint: true
+        }
     }
 }
-       
+    
             
+
 
 
 
