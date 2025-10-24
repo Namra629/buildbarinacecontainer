@@ -12,7 +12,7 @@ pipeline {
             steps {
                 
                 sh '''
-docker run --rm -e LICENSE=accept -v /home/Namra/SimpleWeather-Android:/home/ace/project ibmcom/ace-mqclient:latest 
+docker run --rm -d -e LICENSE=accept -v /home/Namra/SimpleWeather-Android:/home/ace/project ibmcom/ace-mqclient:latest 
 mkdir -p /home/ace/project/bars && ibmint package --input-path /home/ace/project --output-bar-file /home/ace/project/bars/SimpleWeather.bar
                 '''
 
@@ -25,6 +25,7 @@ mkdir -p /home/ace/project/bars && ibmint package --input-path /home/ace/project
 }
     
             
+
 
 
 
