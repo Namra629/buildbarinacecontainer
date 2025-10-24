@@ -3,18 +3,18 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Get your code from GitHub repo
-                git branch: 'main', url: 'https://github.com/your-org/your-repo.git'
+                
+                git branch: 'main', url: 'https://github.com/Namra629/buildbarinacecontainer.git'
             }
         }
         stage('Build ACE BAR') {
             steps {
                 script {
-                    // Use ACE container to run BAR build command
-                    docker.image('ibmcom/ace-mqclient:latest').inside {
+                    
+                    docker.image('ibmcom/ace:11.0.0.6.3-amd64').inside {
                         sh '''
                         echo "Building ACE BAR file..."
-                        mqsicreatebar -data /home/ace/project -b MyApp.bar -a MyApp
+                        ibmint package --input-path /home/Namra/ACE-HelloWorld-main/app --output-bar-file /home/Namra/SimpleWeather-Android/bars/
                         echo "BAR build complete."
                         '''
                     }
@@ -23,3 +23,4 @@ pipeline {
         }
     }
 }
+
