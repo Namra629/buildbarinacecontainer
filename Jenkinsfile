@@ -18,14 +18,11 @@ pipeline {
         }
     }
 
-    post {
-        success {
-            archiveArtifacts artifacts: '/home/Namra/SimpleWeather-Android/bars/*.bar', fingerprint: true
-        }
-    }
+    
 }
     
             
+
 
 
 
