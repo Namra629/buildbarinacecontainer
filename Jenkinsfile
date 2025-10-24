@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh '''
                 docker run --rm -v /home/Namra/SimpleWeather-Android:/home/ace/project ibmcom/ace-mqclient:latest \
-                bash -c "mkdir -p /home/ace/project/bars && ibmint package --input-path /home/ace/project --output-bar-file /home/ace/project/bars/SimpleWeather.bar"
+                mkdir -p /home/ace/project/bars && ibmint package --input-path /home/ace/project --output-bar-file /home/ace/project/bars/SimpleWeather.bar
                 '''
             }
         }
@@ -26,6 +26,7 @@ pipeline {
 }
     
             
+
 
 
 
