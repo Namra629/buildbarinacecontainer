@@ -16,7 +16,7 @@ pipeline {
 
         mkdir -p /home/Namra/SimpleWeather-Android/bars
 
-docker run --rm -d -e LICENSE=accept -v /home/Namra/SimpleWeather-Android:/home/ace/project ibmcom/ace
+docker run --rm -d -e LICENSE=accept -v /home/Namra/SimpleWeather-Android:/home/ace/project ibmcom/ace-buildkit:latest
  bash -c " ibmint package --input-path /home/ace/project --output-bar-file /home/ace/project/bars/SimpleWeather.bar"
                 '''
 
@@ -29,6 +29,7 @@ docker run --rm -d -e LICENSE=accept -v /home/Namra/SimpleWeather-Android:/home/
 }
     
             
+
 
 
 
