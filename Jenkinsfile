@@ -11,16 +11,19 @@ pipeline {
             steps {
                 script {
                     
-                    docker.image('ibmcom/ace:11.0.0.6.3-amd64').inside {
-                        sh '''
-                        echo "Building ACE BAR file..."
-                        ibmint package --input-path /home/Namra/ACE-HelloWorld-main/app --output-bar-file /home/Namra/SimpleWeather-Android/bars/
-                        echo "BAR build complete."
-                        '''
-                    }
+    docker.image('ibmcom/ace-mqclient:latest').inside("-v /home/Namra/SimpleWeather-Android:/home/ace/project") {
+    sh '''
+    echo "Building ACE BAR file..."
+    mkdir -p /home/ace/project/bars
+    ibmint package --input-path /home/ace/project --output-bar-file /home/ace/project/bars/SimpleWeather.bar
+    echo "BAR build complete."
+    '''
+}
+
                 }
             }
         }
     }
 }
+
 
