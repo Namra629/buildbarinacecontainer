@@ -21,8 +21,7 @@ pipeline {
         
 
 docker run -d --rm  -e LICENSE=accept  ibmcom/ace
-ibmint package --input-path /home/Namra/ACE-HelloWorld-main-1
- --output-bar-file /home/Namra/ACE-HelloWorld-main-1/bars"    '''
+ibmint package --input-path /home/Namra/ACE-HelloWorld-main-1 --output-bar-file /home/Namra/ACE-HelloWorld-main-1/bars"    '''
 
                 
             }
@@ -33,6 +32,7 @@ ibmint package --input-path /home/Namra/ACE-HelloWorld-main-1
 }
     
             
+
 
 
 
