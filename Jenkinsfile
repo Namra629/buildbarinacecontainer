@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-    PATH = "/usr/local/bin:/usr/bin:/bin"
-}
-
 
     stages {
         stage('Checkout') {
@@ -22,7 +18,7 @@ pipeline {
          
            # Source ACE environment
                 source /home/Namra/ace-12.0.12.16/server/bin/mqsiprofile
-        mkdir -p /home/Namra/ACE-HelloWorld-main-1/bars
+        
 
 docker run -d --rm  -e LICENSE=accept --name acecontainer1 ibmcom/ace
 ibmint package --input-path /home/Namra/ACE-HelloWorld-main-1
@@ -37,6 +33,7 @@ ibmint package --input-path /home/Namra/ACE-HelloWorld-main-1
 }
     
             
+
 
 
 
