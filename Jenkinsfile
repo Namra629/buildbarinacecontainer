@@ -12,6 +12,8 @@ pipeline {
             steps {
                 
                 sh '''
+
+                #!/bin/bash
          
            # Source ACE environment
                 source /home/Namra/ace-12.0.12.16/server/bin/mqsiprofile
@@ -29,6 +31,7 @@ bash -c "ibmint package --input-path /home/ace/project --output-bar-file /home/a
 }
     
             
+
 
 
 
