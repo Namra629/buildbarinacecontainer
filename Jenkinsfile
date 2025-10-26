@@ -17,10 +17,11 @@ pipeline {
          
            # Source ACE environment
                 source /home/Namra/ace-12.0.12.16/server/bin/mqsiprofile
-        mkdir -p /home/Namra/SimpleWeather-Android/bars
+        mkdir -p /home/Namra/ACE-HelloWorld-main-1/bars
 
 docker run -d --rm  -e LICENSE=accept --name acecontainer ibmcom/ace
-ibmint package --input-path /home/Namra/SimpleWeather-Android --output-bar-file /home/Namra/SimpleWeather-Android/bars/SimpleWeather.bar"    '''
+ibmint package --input-path /home/Namra/ACE-HelloWorld-main-1
+ --output-bar-file /home/Namra/ACE-HelloWorld-main-1/bar/Helloworld.bar"    '''
 
                 
             }
@@ -31,6 +32,7 @@ ibmint package --input-path /home/Namra/SimpleWeather-Android --output-bar-file 
 }
     
             
+
 
 
 
