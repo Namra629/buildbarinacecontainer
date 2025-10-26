@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+    PATH = "/usr/local/bin:/usr/bin:/bin"
+}
+
+
     stages {
         stage('Checkout') {
             steps {
@@ -32,6 +37,7 @@ ibmint package --input-path /home/Namra/ACE-HelloWorld-main-1
 }
     
             
+
 
 
 
