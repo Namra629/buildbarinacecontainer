@@ -3,7 +3,7 @@ pipeline {
 
 
     stages {
-        stage('Checkout') {
+        stage('Checkout...') {
             steps {
                 git branch: 'main', credentialsID: 'Bar_build', url: 'https://github.com/Namra629/buildbarinacecontainer.git'
             }
@@ -32,6 +32,7 @@ ibmint package --input-path /home/Namra/ACE-HelloWorld-main-1 --output-bar-file 
 }
     
             
+
 
 
 
